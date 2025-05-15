@@ -4,10 +4,11 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
+    "dev": "npm run copy-lib && vite",
+    "build": "npm run copy-lib && vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "copy-lib": "cp -r ./node_modules/mupdf-webviewer/lib ./public"
   },
   "dependencies": {
     "mupdf-webviewer": "^0.1.0",
