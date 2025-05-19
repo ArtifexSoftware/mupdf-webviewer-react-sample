@@ -13,7 +13,7 @@ An example of [MuPDF WebViewer](https://webviewer.mupdf.com) within a React proj
 - Copy the license key and replace `YOUR_LICENCE_KEY` in `src/App.jsx` with the license key.
 
 > [!TIP]  
-> Ensure to register `localhost` as a domain for your license key if you require test locally!
+> Ensure to register `localhost` as a domain for your license key if you require to test locally!
 
 ## Install
 
