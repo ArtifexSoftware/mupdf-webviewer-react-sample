@@ -1,10 +1,12 @@
 import { useEffect } from 'react';
+import { createRoot } from 'react-dom/client';
 import './App.css'
 import { initMuPDFWebViewer } from 'mupdf-webviewer'
 
 function App() {
 
   useEffect(() => {
+
     initMuPDFWebViewer(
       '#viewer',
       '/sample.pdf',
@@ -13,11 +15,29 @@ function App() {
         licenseKey: 'YOUR_LICENCE_KEY', // Visit https://webviewer.mupdf.com to get a trial license.
       },
     )
-      .then(() => console.log('MuPDF WebViewer is loaded successfully.'))
-      .catch(console.error);
+      .then(() => console.log('MuPDF WebViewer has successfully loaded.'))
+      .catch(err => {
+        printError(err);
+      });
   })
-
+  
   return <div id="viewer"></div>
+}
+
+function printError(err) {
+	console.log(err);
+	const styleObj = {
+		fontSize: 14,
+		fontFamily: "Arial",
+		textAlign: "left",
+		margin: "20px",
+	};
+
+	const msg = "Please check your license key, if you are running on \"localhost\" then please create a license key for this domain.";
+	const domNode = document.getElementById('viewer');
+	const root = createRoot(domNode);
+	const element = <div style={styleObj}><h1><code>initMuPDFWebViewer()</code> Error</h1><h2>{ String(err) }</h2><p>{msg}</p><h3></h3><h3>See <a href="https://webviewer.mupdf.com/account">https://webviewer.mupdf.com/account</a></h3></div>;
+	root.render(element);
 }
 
 export default App
