@@ -15,7 +15,11 @@ function App() {
         licenseKey: 'YOUR_LICENCE_KEY', // Visit https://webviewer.mupdf.com to get a trial license.
       },
     )
-      .then(() => console.log('MuPDF WebViewer has successfully loaded.'))
+	  .then(mupdf => {
+		/* API */
+		mupdf.toast.show({ type: 'success', content: 'Document opened' });
+		console.log('MuPDF WebViewer has successfully loaded.');
+	  })
       .catch(err => {
         printError(err);
       });
