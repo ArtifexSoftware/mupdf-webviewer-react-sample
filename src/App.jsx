@@ -12,13 +12,16 @@ function App() {
       '/sample.pdf',
       {
         libraryPath: 'lib',
-        licenseKey: 'YOUR_LICENCE_KEY', // Visit https://webviewer.mupdf.com to get a trial license.
+        licenseKey: 'YOUR_LICENSE_KEY', // Visit https://webviewer.mupdf.com to get a trial license.
       },
     )
 	  .then(mupdf => {
 		/* API */
 		mupdf.toast.show({ type: 'success', content: 'Document opened' });
 		console.log('MuPDF WebViewer has successfully loaded.');
+
+        mupdf.viewer.defineAnnotSelectMenu({html:"<div id='container'>Testing custom HTML & CSS for Highlight tool</div>",css:"#container {background-color: #FF00ff;}", tool:mupdf.refs.annotation.tool.HIGHLIGHT})
+
 	  })
       .catch(err => {
         printError(err);

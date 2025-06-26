@@ -11,7 +11,7 @@
     "copy-lib": "cp -r ./node_modules/mupdf-webviewer/lib ./public"
   },
   "dependencies": {
-    "mupdf-webviewer": "^0.1.0",
+    "mupdf-webviewer": "^0.4.0",
     "react": "^19.1.0",
     "react-dom": "^19.1.0"
   },
