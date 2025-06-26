@@ -20,7 +20,7 @@ function App() {
 		mupdf.toast.show({ type: 'success', content: 'Document opened' });
 		console.log('MuPDF WebViewer has successfully loaded.');
 
-        mupdf.viewer.defineAnnotSelectMenu({html:"<div id='my-container'>Testing custom HTML & CSS for Highlight tool</div>",css:"#my-container {min-width:200px;min-height:200px;background-color: #FF00ff;}", tool:mupdf.refs.annotation.tool.HIGHLIGHT})
+        mupdf.viewer.defineAnnotSelectMenu({html:"<div id='my-container'>Testing custom HTML & CSS for Highlight tool</div>",style:"#my-container {min-width:200px;min-height:200px;background-color: #FF00ff;}", tool:mupdf.refs.annotation.tool.HIGHLIGHT})
 
 	  })
       .catch(err => {
